@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BlackHawks</title>
+</head>
+<body BGColor="Black" onload="checkCookie()">
+	<h1 style="color:White;">BLACKHAWK$</h1>
+	<h4 style="color:White;">Cricket Team</h2>
+	<hr><hr>
+	<div style="text-align: center;">
+		
+	<a style="margin-left:1%;" href="file:///C:/MyLocal%20(E)/MCA/Sem%202/Web%20Stack%20Development/Labs/Lab%20Programs/Lab%201/P1_Ind.html">Home </a>
+	<a style="margin-left:5%;" href="file:///C:/MyLocal%20(E)/MCA/Sem%202/Web%20Stack%20Development/Labs/Lab%20Programs/Lab%201/P1_Players.html"> Your Hawks</a>
+	<a style="margin-left:5%;" href="file:///C:/MyLocal%20(E)/MCA/Sem%202/Web%20Stack%20Development/Labs/Lab%20Programs/Lab%202/P2_Team.html"> Your Team</a>
+	<a style="margin-left:5%;" href="file:///C:/MyLocal%20(E)/MCA/Sem%202/Web%20Stack%20Development/Labs/Lab%20Programs/Lab%201/P1_JoinUs.html"> Be a Hawker</a><span id="idd" style="color: #ffffff;"></span>
+	</div>
+	<hr><hr>
+	<center>
+	<img src="cricket3.jpg" alt="Picture Missing :(" width="1200" height="620">
+	<hr><hr>
+	</center>
+
+	<style>
+	a:link {
+	color: #1c93c9;
+	background-color: transparent;
+	text-decoration: none;
+	}
+	a:visited {
+	color: #1c93c9;
+	background-color: transparent;
+	text-decoration: none;
+	}
+
+	a:hover {
+	color: #ffd000;
+	background-color: transparent;
+	text-decoration: underline;
+	}
+
+	a:active {
+	color: red;
+	background-color: transparent;
+	text-decoration: underline;
+	}
+	</style>
+
+	<script>
+		  function setCookie(cname,cvalue,exdays) {
+		  const d = new Date();
+		  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		  let expires = "expires=" + d.toUTCString();
+		  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		  //alert("Set Success " + cvalue);
+		}
+
+		function getCookie(cname) {
+		  let name = cname + "=";
+		  let decodedCookie = decodeURIComponent(document.cookie);
+		  let ca = decodedCookie.split(';');
+		  for(let i = 0; i < ca.length; i++) {
+		    let c = ca[i];
+		    //alert("Get Success " + name);
+		    while (c.charAt(0) == ' ') {
+		      c = c.substring(1);
+		    }
+		    if (c.indexOf(name) == 0) {
+		      return c.substring(name.length, c.length);
+		      //alert("Get Success o" + name);
+		    }
+		  }
+		  return "";
+		  //alert("Get Success " + name);
+		}
+
+		function checkCookie() {
+		  var user = getCookie("username");
+		  //alert("User is  "+ user);
+		  if (user != "") {
+		  	//document.getElementById("idd").innerHTML=getCookie("username");
+		    alert("Welcome again " + user);
+		  } else {
+		     user = prompt("Please enter your name:","Ad");
+		    //document.getElementById("idd").innerHTML="nonononono";
+		     	setCookie("username", user, 30);
+		     
+		  }
+		}
+	</script>
+</body>
+</html>
